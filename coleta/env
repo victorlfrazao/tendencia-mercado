@@ -1,7 +1,7 @@
 # APIs
 ADZUNA_APP_ID=90acff5c
 ADZUNA_APP_KEY=36749ef4afed2e19ac5ad91d3acc65bf
-JOOBLE_KEY=5adb8ca6-298e-4c66-beae-0768e59fd319
+JOOBLE_KEY=a808fdb3-b462-4ad8-a3b1-7eeb671f6444
 
 # PostgreSQL — ajuste a senha conforme a sua instalação
 DATABASE_URL=postgresql://postgres:1806@localhost:5432/tendencias_mercado

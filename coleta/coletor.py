@@ -67,7 +67,7 @@ def coletar_jooble(query: str, paginas: int = 3) -> list[dict]:
             url  = f"https://jooble.org/api/{JOOBLE_KEY}"
             body = {
                 "keywords": query,
-                "location": "Brasil",
+                "location": "Brazil",
                 "page": str(pagina),
                 "ResultOnPage": 50,
             }
@@ -97,9 +97,10 @@ def coletar_tudo() -> list[dict]:
         brutos_adzuna = coletar_adzuna(tag_adzuna)
         norm_adzuna   = [normalizar_adzuna(v) for v in brutos_adzuna]
 
-        # Jooble (desativada temporariamente — erro 403)
-        norm_jooble = []
-
+        # Jooble 
+        brutos_jooble = coletar_jooble(query_jooble)
+        norm_jooble   = [normalizar_jooble(v, categoria) for v in brutos_jooble]
+        
         combinadas = remover_duplicatas(norm_adzuna + norm_jooble)
         print(f"  ✅ {len(norm_adzuna)} Adzuna + {len(norm_jooble)} Jooble = {len(combinadas)} únicas")
         todas.extend(combinadas)
